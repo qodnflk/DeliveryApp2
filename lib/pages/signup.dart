@@ -1,17 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:fooddeliveryapp/pages/signup.dart';
+import 'package:fooddeliveryapp/pages/login.dart';
 import 'package:fooddeliveryapp/widget/widget_support.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,10 +36,12 @@ class _LoginState extends State<Login> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30))),
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
               child: const Text(""),
             ),
             Container(
@@ -71,20 +71,26 @@ class _LoginState extends State<Login> {
                         children: [
                           const SizedBox(height: 30.0),
                           Text(
-                            'Login',
+                            'Sign up',
                             style: AppWidget.semiBoldTextFeildStyle(),
                           ),
                           const SizedBox(height: 30),
                           TextField(
                             decoration: InputDecoration(
-                                hintText: "Email",
-                                hintStyle: AppWidget.semiBoldTextFeildStyle(),
-                                prefixIcon: const Icon(Icons
-                                    .mail_outline)), // prefixIcon 왼쪽 suffixIcon 오른쪽
+                              hintText: "Name",
+                              hintStyle: AppWidget.semiBoldTextFeildStyle(),
+                              prefixIcon: const Icon(Icons.person_outline),
+                            ), // prefixIcon 왼쪽 suffixIcon 오른쪽
                           ),
-                          const SizedBox(
-                            height: 30.0,
+                          const SizedBox(height: 30.0),
+                          TextField(
+                            decoration: InputDecoration(
+                              hintText: "Email",
+                              hintStyle: AppWidget.semiBoldTextFeildStyle(),
+                              prefixIcon: const Icon(Icons.mail_outline),
+                            ), //
                           ),
+                          const SizedBox(height: 30.0),
                           TextField(
                             obscureText: true, // 평소알던 ****로 변경해줌
                             decoration: InputDecoration(
@@ -101,7 +107,7 @@ class _LoginState extends State<Login> {
                               style: AppWidget.semiBoldTextFeildStyle(),
                             ),
                           ),
-                          const SizedBox(height: 80.0),
+                          const SizedBox(height: 40.0),
                           Material(
                             elevation: 5.0,
                             borderRadius: BorderRadius.circular(20.0),
@@ -113,7 +119,7 @@ class _LoginState extends State<Login> {
                                   borderRadius: BorderRadius.circular(20.0)),
                               child: const Center(
                                 child: Text(
-                                  'Log In',
+                                  'Sign up',
                                   style: TextStyle(
                                     fontSize: 18.0,
                                     color: Colors.white,
@@ -124,16 +130,16 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 60),
+                          const SizedBox(height: 30),
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const SignUp()));
+                                      builder: (context) => const Login()));
                             },
                             child: Text(
-                              "Don't have an account? Sign up",
+                              "Already have an account? Login",
                               style: AppWidget.semiBoldTextFeildStyle(),
                             ),
                           ),
