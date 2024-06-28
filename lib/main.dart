@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/pages/bottomnav.dart';
 import 'package:fooddeliveryapp/pages/home.dart';
 import 'package:fooddeliveryapp/pages/login.dart';
+import 'package:fooddeliveryapp/pages/onboard.dart';
 
 import 'pages/signup.dart';
 
@@ -21,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignUp(),
+      home: Onboard(),
     );
   }
 }
